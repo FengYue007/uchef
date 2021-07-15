@@ -9,5 +9,7 @@ class RestaurantsController < ApplicationController
  end
 
  def list
+   # render html: "Title is #{params[:title]}
+   render html: "Title is #{params[:title]}、#{params[:tel]}、#{params[:address]}、#{params[:description]}"
  end
 end
