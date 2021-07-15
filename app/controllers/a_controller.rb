@@ -3,4 +3,4 @@ class AController < ApplicationController
     # render html: 'hello'
     render ( {html: 'hello'} )
   end
-end
+
