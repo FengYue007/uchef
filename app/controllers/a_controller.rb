@@ -1,6 +1,6 @@
 class AController < ApplicationController
-  def b
-    # render html: 'hello'
-    render ( {html: 'hello'} )
-  end
-
+  # def b
+  #   # render html: 'hello'
+  #   render ( {html: 'hello'} )
+  # end
+end
