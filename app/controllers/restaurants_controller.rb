@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
    # 寫入資料庫
    # redirect -> 列表頁
    # render html: "Title is #{params[:title]}
-   render html: "Title is #{params[:title]}、#{params[:tel]}、#{params[:address]}、#{params[:description]}"
+   # render html: "Title is #{params[:title]}、Tel is #{params[:tel]}、Address #{params[:address]}、Description is #{params[:description]}"
+   redirect_to '/restaurants' 
  end
 end
