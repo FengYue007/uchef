@@ -1,6 +1,9 @@
 <h1>餐廳列表</h1>
-<% if  %>
+
+<% 有登入 = true %>
+
+<% if 有登入 %>
   <a href="/new_restaurant">新增餐廳</a>
 <% end %>
 
-<%= link_to ("新增餐廳", new_restaurant_path) if 有登入 %>
+<%= link_to('新增餐廳', new_restaurant_path) if 有登入 %>
