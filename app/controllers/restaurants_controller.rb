@@ -6,9 +6,10 @@ class RestaurantsController < ApplicationController
  end
 
  def new
+   @restaurant = Restaurant.new
  end
 
- def list
+ def create
    # 寫入資料庫
    # redirect -> 列表頁
    # render html: "Title is #{params[:title]}
