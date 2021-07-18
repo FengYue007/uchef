@@ -15,7 +15,8 @@ class RestaurantsController < ApplicationController
    if @restaurant.save
      redirect_to '/restaurants'
    else
-     render html: '資料發生錯誤'
+     redirect_to new_restaurant_path
+     # render html: '資料發生錯誤'
    end
    # redirect -> 列表頁
    # render html: "Title is #{params[:title]}
