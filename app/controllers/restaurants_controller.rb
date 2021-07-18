@@ -10,11 +10,10 @@ class RestaurantsController < ApplicationController
  end
 
  def create
-   # 寫入資料庫
-   # strong parameter 安全考量，github事件之後，Rails 4之後把驗證加進來。
-   
-   # debugger # 豬八戒
 
+   if restaurant_params[:title] != ''
+    render html: '請輸入title'
+   end
    @restaurant = Restaurant.new(restaurant_params)
    
    if @restaurant.save
@@ -30,7 +29,7 @@ class RestaurantsController < ApplicationController
 
  private
    def restaurant_params
-     # params.require(:restaurant).permit(:title, :tel, :address, :email, :description)
-     params[:restaurant].permit(:title, :tel, :address, :email, :description)
+     params.require(:restaurant).permit(:title, :tel, :address, :email, :description)
+     # params[:restaurant].permit(:title, :tel, :address, :email, :description)
    end
 end
