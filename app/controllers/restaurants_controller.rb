@@ -12,7 +12,7 @@ class RestaurantsController < ApplicationController
  def create
    # 寫入資料庫
 
-  render html:params[:restaurant][:title]
+  render html:params
    
    @restaurant = Restaurant.new
 
