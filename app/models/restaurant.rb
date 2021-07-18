@@ -7,7 +7,9 @@ class Restaurant < ApplicationRecord
 
   private
     def aaaa
-      .....
+      if ....
+      errors << 123
+      end
     end
 
 end
