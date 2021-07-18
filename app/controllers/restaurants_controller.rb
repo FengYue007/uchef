@@ -11,8 +11,9 @@ class RestaurantsController < ApplicationController
 
  def create
    # 寫入資料庫
+   # strong parameter 安全考量，github事件之後，Rails 4之後把驗證加進來。
    # r = params.require(:restaurant).permit(:title, :tel, :address, :email, :description) 
-   #
+   
    # debugger # 豬八戒
 
    @restaurant = Restaurant.new
