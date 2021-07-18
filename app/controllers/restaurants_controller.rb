@@ -10,10 +10,6 @@ class RestaurantsController < ApplicationController
  end
 
  def create
-
-   if restaurant_params[:title] != ''
-    render html: '請輸入title'
-   end
    @restaurant = Restaurant.new(restaurant_params)
    
    if @restaurant.save
