@@ -2,6 +2,12 @@ class Restaurant < ApplicationRecord
   # validates( :title, presence: true )
   validates :restaurant, presence: true
 
-  # Rails 3 驗證寫法
-  validate_presence_of :title, :email
+  # 現在驗證不夠，客制化驗證器寫法
+  ivalidate :aaa
+
+  private
+    def aaaa
+      .....
+    end
+
 end
