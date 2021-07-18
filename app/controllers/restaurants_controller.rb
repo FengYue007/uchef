@@ -13,9 +13,11 @@ class RestaurantsController < ApplicationController
    @restaurant = Restaurant.new(restaurant_params)
    
    if @restaurant.save
-     redirect_to '/restaurants'
+     redirect_to restaurants_path
    else
-     redirect_to new_restaurant_path
+     # redirect_to new_restaurant_path
+     render :new # 借new.html.erb
+     # render action: :new
      # render html: '資料發生錯誤'
    end
    # redirect -> 列表頁
