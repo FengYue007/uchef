@@ -3,5 +3,5 @@ class Restaurant < ApplicationRecord
   validates :restaurant, presence: true
 
   # Rails 3 驗證寫法
-  validate_presence_of :title
+  validate_presence_of :title, :email
 end
