@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
 
    debugger # 豬八戒
 
-   # @restaurant = Restaurant.new(params[:restaurant])
+   @restaurant = Restaurant.new(params[:restaurant])
    #
    # if @restaurant.save
    #   redirect_to '/restaurants'
