@@ -7,5 +7,5 @@ class Restaurant < ApplicationRecord
   
   # 建議寫兩行！
   validates :restaurant, :title, presence: true
-  validates :restaurant, :email, presence: true
+  validates :restaurant, :email, presence: true, uniqueness: true
 end
