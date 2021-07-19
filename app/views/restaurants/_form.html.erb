@@ -1,12 +1,12 @@
-<% if @restaurant.errors.any? %>
+<% if restaurant.errors.any? %>
   <ul>
-    <% @restaurant.errors.full_messages.each do |message| %>
+    <% restaurant.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
 
-<%= form_for(@restaurant) do |f| %>
+<%= form_for(restaurant) do |f| %>
 
 <div class="field">
   <%= f.label :title %>  
