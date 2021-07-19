@@ -8,9 +8,13 @@ class RestaurantsController < ApplicationController
  end
 
  def show
-   @restaurant = Restaurant.find(params[:id]) # 只能找id
-   @restaurant = Restaurant.find_by(id: params[:id]) # 可以找其它的，除了id，也可以寫(title: params[:id])
-   # render html: params # 每個頁面都有自己的params，試著印出來看看！
+   begin
+     @restaurant = Restaurant.find(params[:id]) # 只能找id
+     # Exception 例外
+     # Error 錯誤
+   rescue
+     redirect_to restaurants_path
+   end
  end
 
  def new
