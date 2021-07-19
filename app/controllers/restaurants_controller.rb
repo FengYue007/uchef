@@ -3,8 +3,8 @@ class RestaurantsController < ApplicationController
   # skip_before_action :verify_authenticity_token
 
  def index
-   # @restaurants = Restaurant.order(id: :desc)
-   @restaurants = Restaurant.where("title like '%新增餐廳%'")  #摸糊比對 第一個%找新前面有的字，第二個%找廳後面有的字。
+   @restaurants = Restaurant.order(id: :desc)
+   # @restaurants = Restaurant.where("title like '%新增餐廳%'")  #摸糊比對 第一個%找新前面有的字，第二個%找廳後面有的字。
  end
 
  def new
