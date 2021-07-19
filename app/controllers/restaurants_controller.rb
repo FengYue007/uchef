@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
-  # repo:https://stackoverflow.com/questions/3364492/actioncontrollerinvalidauthenticitytoken
-  # skip_before_action :verify_authenticity_token
+
+rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
  def index
    @restaurants = Restaurant.order(id: :desc)
@@ -8,11 +8,9 @@ class RestaurantsController < ApplicationController
  end
 
  def show
-   @restaurant = Restaurant.find(params[:id]) # 只能找id
-   # Exception 例外
-   # Error 錯誤
- rescue
-   redirect_to restaurants_path
+     @restaurant = Restaurant.find(params[:id]) # 只能找id
+     # Exception 例外
+     # Error 錯誤
  end
 
  def new
@@ -40,5 +38,9 @@ class RestaurantsController < ApplicationController
    def restaurant_params
      params.require(:restaurant).permit(:title, :tel, :address, :email, :description)
      # params[:restaurant].permit(:title, :tel, :address, :email, :description)
+   end
+
+   def not_found
+     redirect_to restaurants_path
    end
 end
