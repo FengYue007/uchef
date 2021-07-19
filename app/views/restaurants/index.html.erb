@@ -5,7 +5,8 @@
   <li>
     <%= link_to restaurant.title, restaurant_path(restaurant) %>  
     <%= link_to "編輯", edit_restaurant_path(restaurant) %>
-    <%= link_to "刪除", '#' %>
+    <%= link_to "刪除", restaurant_path(restaurant), 'data-method': 'delete' %>
+    <%= link_to "刪除", restaurant_path(restaurant), method: 'delete' %>
   </li>
 <% end %>
 </ul>

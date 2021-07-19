@@ -26,6 +26,22 @@ class RestaurantsController < ApplicationController
    @restaurant = Restaurant.find(params[:id]) # 只能找id
  end
 
+ def update
+   @restaurant = Restaurant.find(params[:id]) # 只能找id
+
+   if @restaurant.update(restaurant_params)
+     redirect_to restaurant_path(@restaurant)
+   else
+     render :edit
+   end
+ end
+
+ def destroy
+   @restaurant = Restaurant.find(params[:id])
+   @restaurant.destroy
+   redirect_to restaurants_path 
+ end
+
  private
    def restaurant_params
      params.require(:restaurant).permit(:title, :tel, :address, :email, :description)
