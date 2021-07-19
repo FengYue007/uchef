@@ -3,10 +3,10 @@
 <ul>
 <% @restaurants.each do |restaurant| %>
   <li>
-    <%= link_to restaurant.title, restaurants_path(restaurant.id) %>  
-    <%= link_to restaurant.title, restaurants_path(restaurant) %>  
+    <%# 這一種寫法不好，感覺硬揍的寫法。 <%= link_to restaurant.title, "/restaurants/#{restaurant.id}" %>  
+    <%# 同上 <%= link_to restaurant.title, restaurant_path(restaurant.id) %>  
+    <%= link_to restaurant.title, restaurant_path(restaurant) %>  
     <%= link_to restaurant.title, restaurant %>  
-    <%# <%= link_to restaurant.title, "/restaurants/#{restaurant.id}" %>  
   </li>
 <% end %>
 </ul>
