@@ -7,6 +7,12 @@ class RestaurantsController < ApplicationController
    # @restaurants = Restaurant.where("title like '%新增餐廳%'")  #摸糊比對 第一個%找新前面有的字，第二個%找廳後面有的字。
  end
 
+ def show
+   @restaurant = Restaurant.find(params[:id]) 
+   @restaurant = Restaurant.find_by(id: params[:id]) 
+   # render html: params # 每個頁面都有自己的params，試著印出來看看！
+ end
+
  def new
    @restaurant = Restaurant.new
  end
