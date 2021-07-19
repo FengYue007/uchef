@@ -1,4 +1,13 @@
 <h1>餐廳列表</h1>
 
+<ul>
+<% @restaurants.each do |restaurant| %>
+  <li>
+    <%= restaurant.title %>  
+  </li>
+<% end %>
+</ul>
+  
+
 <%= link_to '新增餐廳', new_restaurant_path  %>
 
