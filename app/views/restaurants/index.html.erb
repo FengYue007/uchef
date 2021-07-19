@@ -4,7 +4,7 @@
 <% @restaurants.each do |restaurant| %>
   <li>
     <%# 這一種寫法不好，感覺硬揍的寫法。 <%= link_to restaurant.title, "/restaurants/#{restaurant.id}" %>  
-    <%# 同上 <%= link_to restaurant.title, restaurant_path(restaurant.id) %>  
+    <%# 這一種寫法，它會先翻到裡面的資料，在找id，所以id可以不用寫。 <%= link_to restaurant.title, restaurant_path(restaurant.id) %>  
     <%= link_to restaurant.title, restaurant_path(restaurant) %>  
     <%= link_to restaurant.title, restaurant %>  
   </li>
