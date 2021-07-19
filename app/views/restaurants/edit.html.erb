@@ -8,7 +8,7 @@
     </ul>
   <% end %>
 
-<%= form_for(@restaurant) do |f| %>
+<%= form_for(@restaurant, url: '/', method: 'get') do |f| %>
 
   <div class="field">
     <%= f.label :title %>  
@@ -35,5 +35,5 @@
     <%= f.text_area :description, placeholder: '請輸入您對此餐廳的描述' %>
   </div>
 
-  <%= f.submit "submit" %>
+  <%= f.submit %>
 <% end %>
