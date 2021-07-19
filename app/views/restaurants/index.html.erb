@@ -4,6 +4,8 @@
 <% @restaurants.each do |restaurant| %>
   <li>
     <%= link_to restaurant.title, restaurant_path(restaurant) %>  
+    <%= link_to "編輯", '#' %>
+    <%= link_to "刪除", '#' %>
   </li>
 <% end %>
 </ul>
