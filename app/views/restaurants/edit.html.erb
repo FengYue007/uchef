@@ -1,0 +1,39 @@
+<h1>編輯餐廳</h1>
+
+  <% if @restaurant.errors.any? %>
+    <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+<%= form_for(@restaurant) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>  
+    <%= f.text_field :title, placeholder: '請輸入餐廳名稱' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tel %>
+    <%= f.text_field :tel, placeholder: '請輸入電話號碼' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: '請輸入Email信箱' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: '請輸入您的住址' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: '請輸入您對此餐廳的描述' %>
+  </div>
+
+  <%= f.submit "submit" %>
+<% end %>

@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
  end
 
  def show
-     @restaurant = Restaurant.find(params[:id]) # 只能找id
+   @restaurant = Restaurant.find(params[:id]) # 只能找id
  end
 
  def new
@@ -20,6 +20,10 @@ class RestaurantsController < ApplicationController
    else
      render :new # 借new.html.erb
    end
+ end
+
+ def edit
+   @restaurant = Restaurant.find(params[:id]) # 只能找id
  end
 
  private
