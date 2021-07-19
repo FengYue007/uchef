@@ -5,14 +5,21 @@
   <li>
     <%= link_to restaurant.title, restaurant_path(restaurant) %>  
     <%= link_to "編輯", edit_restaurant_path(restaurant) %>
-    <%= link_to "刪除", restaurant_path(restaurant), 'data-method': 'delete', 'data-confirm': '確定要刪除嗎？' %>
-    <%# <%= link_to "刪除", restaurant_path(restaurant), method: 'delete' %>
+    <%#= link_to "刪除", restaurant_path(restaurant), 'data-method': 'delete', 'data-confirm': '確定要刪除嗎？' %>
+    <%#= link_to "刪除", 
+                     restaurant_path(restaurant),
+                     data: { method: 'delete',
+                     confirm: '確定要刪除嗎？'} %>
+    <%= link_to "刪除", 
+                 restaurant_path(restaurant),
+                 method: 'delete',
+                 data: { x: 1 confirm: '確定要刪除嗎？'} %>
+    <%#= link_to "刪除", restaurant_path(restaurant), method: 'delete' %>
   </li>
 <% end %>
 </ul>
 
 
-<a href="/restaurants/13" data-method="delete" data-confirm="抽iphone 試試看唷！">抽 iphone 按這裡</a>
 
 
 <%= link_to '新增餐廳', new_restaurant_path  %>
