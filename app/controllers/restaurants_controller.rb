@@ -8,16 +8,11 @@ class RestaurantsController < ApplicationController
  end
 
  def show
-   begin
-     # 開啟檔案
-     @restaurant = Restaurant.find(params[:id]) # 只能找id
-     # Exception 例外
-     # Error 錯誤
-   rescue
-     redirect_to restaurants_path
-   else
-     # 關檔
-   end
+   @restaurant = Restaurant.find(params[:id]) # 只能找id
+   # Exception 例外
+   # Error 錯誤
+ rescue
+   redirect_to restaurants_path
  end
 
  def new
