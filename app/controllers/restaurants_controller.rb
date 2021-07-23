@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
   # before_action :find_restaurant, except: [:index, :new, :create]
 
  def index
-   @restaurants = Restaurant.where(deleted_at: nil)
+   @restaurants = Restaurant.available
  end
 
  def show
@@ -40,8 +40,7 @@ class RestaurantsController < ApplicationController
 
  def destroy
    # @restaurant = Restaurant.find(params[:id])
-   # @restaurant.destroy
-   @restaurant.update(deleted_at: Time.now)
+   @restaurant.destroy
    redirect_to restaurants_path 
  end
 
