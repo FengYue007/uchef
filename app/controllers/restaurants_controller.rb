@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
   # before_action :find_restaurant, except: [:index, :new, :create]
 
  def index
-   @restaurants = Restaurant.order(id: :desc)
+   @restaurants = Restaurant.where(deleted_at: nil)
  end
 
  def show
