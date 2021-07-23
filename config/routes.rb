@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   resources :restaurants
 
+  root "restaurants#index"
+
   # get '/restaurants', to: 'restaurants#index'
   #
   # get '/new_restaurant', to: 'restaurants#new'
