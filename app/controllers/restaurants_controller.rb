@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
   # before_action :find_restaurant, except: [:index, :new, :create]
 
  def index
-   @restaurants = Restaurant.available
+   @restaurants = Restaurant.all
  end
 
  def show
