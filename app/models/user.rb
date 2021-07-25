@@ -7,6 +7,15 @@ class User < ApplicationRecord
 
   before_create :encrypt_password
 
+  def self.login(params)
+    email = params[:email]
+    password = params[:password]
+
+    encrypted_password = Digest::SHA1.hexdigest("123#{password}xx")
+
+    find_by(email: email, password: encrypted_password)
+  end
+
   private
   def encrypt_password
     # 加密
@@ -17,7 +26,7 @@ class User < ApplicationRecord
     # password = Digest::SHA1.hexdigest(password)
   end
 
-  def salted_pwd
+  def salted_pwd(pd)
     "123#{self.password}123"
   end
 
