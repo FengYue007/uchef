@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if User.login(user_params)
       # 發號碼牌
       # 轉去首頁
+     redirect_to root_path
     else
      redirect_to sign_in_sessions_path 
     end
