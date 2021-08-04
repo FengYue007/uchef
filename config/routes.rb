@@ -14,7 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :restaurants
+  resources :restaurants do
+    resources :comments, shallow: true, 
+                         only: [:create, :destroy]
+    # resources :comments, only: [:index, :new, :create]
+  end
+  # resources :comments, except: [:index, :new, :create]
 
   root "restaurants#index"
 

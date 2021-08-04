@@ -9,6 +9,8 @@ class RestaurantsController < ApplicationController
 
  def show
    @restaurant = Restaurant.find(params[:id]) 
+   # @comment = Comment.new # 全新什麼都沒有
+   @comment = @restaurant.comments.new # 全新的，直接把餐廳id代入
  end
 
  def new

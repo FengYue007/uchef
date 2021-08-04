@@ -4,6 +4,7 @@ class Restaurant < ApplicationRecord
 
   validates :title, presence: true
   belongs_to :user
+  has_many :comments
 
   # default_scope { available }
   # scope :available, -> { where(deleted_at: nil) }

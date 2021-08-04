@@ -1,7 +1,8 @@
 <h1><%= @restaurant.title %></h1>
-<h1><%= @restaurant.tel %></h1>
-<h1><%= @restaurant.email %></h1>
-<h1><%= @restaurant.address %></h1>
-<h1><%= @restaurant.description %></h1>
+
+<h3>留言</h3>
+
+<%= form_for(@comment, url: '/') do |form| %>
+<% end %>
 
 <%= link_to '返回餐廳列表', restaurants_path %>
