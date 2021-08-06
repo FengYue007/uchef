@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
     # @comment.ip_address = 抓ip
 
     if @comment.save
-      redirect_to restaurant_path(@restaurant) # 餐廳的show 標準
+      # 執行 create.js.erb
+      # 不做事
+      # redirect_to restaurant_path(@restaurant) # 餐廳的show 標準
       # redirect_to @restaurant # 餐廳的show　簡寫
     else
       render 'restaurants/show'

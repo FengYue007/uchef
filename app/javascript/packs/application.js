@@ -12,6 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import '../frontend'
+// import '../frontend'
 import '../styles'
 import '@fortawesome/fontawesome-free'
