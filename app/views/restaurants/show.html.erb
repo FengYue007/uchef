@@ -3,13 +3,13 @@
 <h3>留言</h3>
 # POST /comments
 
-<%= form_with(model: @comment, url: restaurant_comments_path(@restaurant)) do |form| %>
-  <div class ="field">
-    <%= form.label :content, '留言內容 with' %>
-    <%= form.text_area :content %>
-  </div>  
-  <%= form.submit %>
-<% end %>
+<%# <%= form_with(model: @comment, url: restaurant_comments_path(@restaurant)) do |form| %>
+<%#   <div class ="field">
+<%#     <%= form.label :content, '留言內容 with' %>
+<%#     <%= form.text_area :content %>
+<%#   </div>  
+<%#   <%= form.submit %>
+<%# <% end %>
 
 <%= form_for(@comment, url: restaurant_comments_path(@restaurant),remote: true) do |form| %>
   <div class ="field">
