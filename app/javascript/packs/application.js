@@ -14,3 +14,4 @@ ActiveStorage.start()
 
 import '../frontend'
 import '../styles'
+import '@fortawesome/fontawesome-free'
