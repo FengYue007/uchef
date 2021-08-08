@@ -6,6 +6,11 @@ class Restaurant < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  has_many :favorite_restaurants
+  has_many :likers, through: :favorite_restaurants,
+                           source: :user
+
+
   # default_scope { available }
   # scope :available, -> { where(deleted_at: nil) }
   #
