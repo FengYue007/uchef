@@ -36,8 +36,8 @@ class User < ApplicationRecord
     find_by(email: email, password: encrypted_password)
   end
 
-  def like?(restaurant))
-  　pocket_list.exists?(restaurant.id)
+  def like?(restaurant)
+    pocket_list.exists?(restaurant.id)
   end
 
   private

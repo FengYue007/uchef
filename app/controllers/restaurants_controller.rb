@@ -18,7 +18,7 @@ class RestaurantsController < ApplicationController
  def pocket_list
    @restaurant = Restaurant.find(params[:id]) 
 
-   if (current_user.pocket_list.exists?(@restaurant.id))
+   # if (current_user.pocket_list.exists?(@restaurant.id))
 
    if (current_user.like?(@restaurant))
      # 移除名單
@@ -88,5 +88,4 @@ class RestaurantsController < ApplicationController
    def restaurant_params
      params.require(:restaurant).permit(:title, :tel, :address, :email, :description)
    end
-
 end
