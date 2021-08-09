@@ -1,7 +1,8 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { 
   faUserAstronaut,
-  faHeart 
+  faHeart,
+  faTimesCircle
 } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -12,7 +13,8 @@ import {
 library.add(
   faUserAstronaut, 
   faHeart,
-  faThumbsUp
+  faThumbsUp,
+  faTimesCircle
 )
 
 dom.watch()

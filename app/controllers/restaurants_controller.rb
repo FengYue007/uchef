@@ -45,7 +45,7 @@ class RestaurantsController < ApplicationController
    @restaurant = current_user.restaurants.new(restaurant_params)
    
    if @restaurant.save
-     redirect_to restaurants_path
+     redirect_to restaurants_path, notice: '餐廳成功建立'
    else
      render :new # 借new.html.erb
    end
@@ -59,7 +59,8 @@ class RestaurantsController < ApplicationController
    # @restaurant = Restaurant.find(params[:id]) # 只能找id
 
    if @restaurant.update(restaurant_params)
-     redirect_to restaurant_path(@restaurant)
+     # flash[:nitice] = 'good!'
+     redirect_to restaurant_path(@restaurant), notice: '成功修改資料!'
    else
      render :edit
    end
@@ -68,7 +69,7 @@ class RestaurantsController < ApplicationController
  def destroy
    # @restaurant = Restaurant.find(params[:id])
    @restaurant.destroy
-   redirect_to restaurants_path 
+   redirect_to restaurants_path, notice: '成功修改資料!'
  end
 
  private
