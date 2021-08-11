@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   # skip_before_action :verify_authenticity_token
 
  def index
-   @restaurants = Restaurant.all
+   @restaurants = Restaurant.all.includes(:user, :likers)
  end
 
  def show
